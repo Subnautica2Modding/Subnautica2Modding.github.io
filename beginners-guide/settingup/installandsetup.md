@@ -11,7 +11,7 @@ When I set up a Dev environment, I like to keep everything together. There are o
 
 ## Create a modding folder
 
-I have a dedicated 1TB SSD on my machine that I have mounted as E: and I have a `dev` folder where I keep all my dev work.
+I have a dedicated 1TB SSD on my machine that I have mounted as E: and I have a `dev` folder where I keep all my dev work. I created an `unrealdev` folder for all my Unreal Engine related tools. 
 
 I suggest creating a folder structure like this somewhere on your computer:
 
