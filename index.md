@@ -23,4 +23,4 @@ Have a suggestion but don't want to write it yourself? [Open an issue](https://g
 
 ## Community
 
-Join the community on Discord: https://discord.gg/UpWuWwq
+Join the community on [Discord](https://discord.gg/UpWuWwq) 
