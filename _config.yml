@@ -1,0 +1,18 @@
+title: Subnautica 2 Modding
+description: Dive into Subnautica 2 modding - guides, references, and tutorials
+theme: just-the-docs
+color_scheme: dark
+
+url: https://subnautica2modding.github.io
+
+# Needed for admonitions like caution, warning, note, etc
+plugins:
+  - jekyll-gfm-admonitions
+  
+aux_links:
+  Subnautica Modding Discord:
+    - https://discord.gg/UpWuWwq
+
+# Include 'Edit in GitHub' links
+gh_edit_repository: https://github.com/subnautica2modding/subnautica2modding.github.io
+gh_edit_branch: main
