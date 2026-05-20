@@ -8,7 +8,7 @@ This site provides guides, references, and tutorials for creating mods for Subna
 
 ## Contributing
 
-Contributions are welcome! Whether you want to fix a typo, improve an existing guide, or write something new, please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidance on how to get involved.
+Contributions are welcome! Whether you want to fix a typo, improve an existing guide, or write something new, please see [CONTRIBUTING.md](https://github.com/Subnautica2Modding/Subnautica2Modding.github.io?tab=contributing-ov-file) for guidance on how to get involved.
 
 Have a suggestion but don't want to write it yourself? [Open an issue](../../issues) and let us know.
 
