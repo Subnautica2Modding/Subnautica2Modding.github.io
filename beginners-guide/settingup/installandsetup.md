@@ -7,7 +7,7 @@ parent: Setting up for SN2 development
 
 # Installation and Set-up
 
-When I set up a Dev environment, I like to keep everything together. There are other advantages to doing this that we'll see later when we go through the installation process, so I strongly advice you follow a similar pattern.
+When I set up a Dev environment, I like to keep everything together. There are other advantages to doing this that we'll see later when we go through the installation process, so I strongly advise you to follow a similar pattern.
 
 ## Create a modding folder
 
