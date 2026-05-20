@@ -69,6 +69,7 @@ Every page must include front matter at the top of the file. Use the appropriate
 
 ```yaml
 ---
+layout: default
 title: Your Section Title
 nav_order: 1
 has_children: true
@@ -79,6 +80,7 @@ has_children: true
 
 ```yaml
 ---
+layout: default
 title: Your Page Title
 parent: Your Section Title
 nav_order: 1
@@ -89,6 +91,7 @@ nav_order: 1
 
 ```yaml
 ---
+layout: default
 title: Your Page Title
 parent: Your Parent Page Title
 grand_parent: Your Section Title
