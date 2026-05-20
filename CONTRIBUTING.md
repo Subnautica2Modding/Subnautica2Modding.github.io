@@ -2,12 +2,12 @@
 
 Thank you for your interest in contributing to the Subnautica 2 Modding documentation! This guide covers everything you need to know to contribute effectively.
 
-## Ways to Contribute
+## Ways to contribute
 
 - **Suggest content** - [open an issue](../../issues) to propose a new guide, flag inaccurate information, or suggest improvements
 - **Submit changes** - all content changes are made via pull requests - please do not push directly to `main`!
 
-## Getting Started
+## Getting started
 
 ### Prerequisites
 
@@ -15,7 +15,7 @@ Thank you for your interest in contributing to the Subnautica 2 Modding document
 - [Bundler](https://bundler.io/) (`gem install bundler`)
 - A Markdown editor (see [Authoring Tools](#authoring-tools) below)
 
-### First-Time Setup
+### First-time setup
 
 Clone the repository and install dependencies. Commands must be run from the repository root folder:
 
@@ -25,7 +25,7 @@ bundle install
 
 This only needs to be done once.
 
-### Previewing Locally
+### Previewing locally
 
 To build and serve the site locally:
 
@@ -35,14 +35,14 @@ bundle exec jekyll serve
 
 The site will be available at `http://127.0.0.1:4000`. The server will watch for changes and rebuild automatically. Hit `Ctrl+C` twice to stop.
 
-## Authoring Tools
+## Authoring tools
 
 Any text editor will work for editing Markdown files. The following dedicated Markdown editors are recommended:
 
 - **[Typora](https://typora.io/)** - a really nice WYSIWYG Markdown editor, used to create this file and the Beginners Guide (paid, one-time licence).
 - **[MarkText](https://www.marktext.cc/)** - a capable open source alternative to Typora.
 
-## Repository Structure
+## Repository structure
 
 ```
 └── 📁Subnautica2Modding.github.io
@@ -59,9 +59,9 @@ Any text editor will work for editing Markdown files. The following dedicated Ma
     ├── Gemfile.lock			<- Locked Gem dependencies
 ```
 
-## Writing Pages
+## Writing pages
 
-### Front Matter
+### Front matter
 
 Every page must include front matter at the top of the file. Use the appropriate template below:
 
@@ -96,14 +96,14 @@ nav_order: 1
 ---
 ```
 
-### Navigation Order (`nav_order`)
+### Navigation order (`nav_order`)
 
 - Every page must have a `nav_order` value.
 - Use sequential integers starting from `1`, scoped within each section.
 - Do not duplicate `nav_order` values within the same section - duplicates will cause unpredictable ordering.
 - When inserting a new page between existing pages, renumber as needed to keep the sequence clean.
 
-### Folder Structure
+### Folder structure
 
 - Each top-level section should have its own folder at the repository root.
 - Grandchild pages should be in a subfolder named after the parent page.
@@ -116,13 +116,13 @@ nav_order: 1
 - Store site-wide images (logo, favicon, etc.) in `assets/images/` at the repository root.
 - Use descriptive filenames in lowercase with hyphens, e.g. `mod-setup-screen.png`.
 
-## Gem and Dependency Management
+## Gem and dependency management
 
 - **Do not modify `Gemfile`** unless you have a specific, agreed reason to add or change a dependency.
 - **Do not run `bundle update`** as part of routine work - only run it deliberately when a gem update is needed, and always commit the resulting .`Gemfile.lock`.
 - If you delete `Gemfile.lock` to resolve a dependency issue, run `bundle install` to regenerate it and commit the result.
 
-## Pull Requests
+## Pull requests
 
 - Keep pull requests focused - one topic or fix per PR where possible.
 - Include a clear description of what you've changed and why.
