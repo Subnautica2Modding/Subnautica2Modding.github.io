@@ -1,0 +1,2040 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://subnautica2modding.github.io/beginners-guide/your-first-mod/coding-your-mod/">
+      
+      
+        <link rel="prev" href="../finding-what-to-change/">
+      
+      
+        <link rel="next" href="../testing-the-mod/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Coding Your Mod - Subnautica 2 Modding</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#coding-your-mod" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Subnautica 2 Modding" class="md-header__button md-logo" aria-label="Subnautica 2 Modding" data-md-component="logo">
+      
+  <img src="../../../images/sn2logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Subnautica 2 Modding
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Coding Your Mod
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Subnautica 2 Beginners Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Subnautica 2 Modding" class="md-nav__button md-logo" aria-label="Subnautica 2 Modding" data-md-component="logo">
+      
+  <img src="../../../images/sn2logo.png" alt="logo">
+
+    </a>
+    Subnautica 2 Modding
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subnautica 2 Beginners Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Subnautica 2 Beginners Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../before-you-begin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Before You Begin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modding-unreal-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modding Unreal Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../important-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Important Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../setting-up/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting Up for SN2 Development
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setting Up for SN2 Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setting-up/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../setting-up/install-and-setup/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation and Set-up
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation and Set-up
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setting-up/install-and-setup/creating-a-git-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating a Git Repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setting-up/install-and-setup/fmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setting-up/install-and-setup/other-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setting-up/install-and-setup/ue4ss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UE4SS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setting-up/install-and-setup/unreal-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unreal Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setting-up/install-and-setup/visual-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setting-up/install-and-setup/vs-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VS Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setting-up/install-and-setup/vs-code-workspace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VS Code Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exploring-game-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exploring Game Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your First Mod
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Your First Mod
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creating-lua-mod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating a Lua Mod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finding-what-to-change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finding What to Change
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding Your Mod
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding Your Mod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-and-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup and logging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-the-players-attribute-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding the player's attribute set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-the-reference-on-spawn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding the reference on spawn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polling-and-updating-the-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polling and updating the attributes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-mod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing the mod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-on-this-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building on this pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-the-mod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing the Mod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commit-to-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commit to GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upload-to-nexus-mods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upload to Nexus Mods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../advanced-modding/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Modding
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced Modding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../advanced-modding/asset-replacement-mod/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asset Replacement Mod
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Asset Replacement Mod
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../advanced-modding/blueprint-script-mod/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint Script Mod
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8_3" id="__nav_2_8_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blueprint Script Mod
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-modding/blueprint-script-mod/creating-a-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating a Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-and-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup and logging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-the-players-attribute-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding the player's attribute set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-the-reference-on-spawn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding the reference on spawn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polling-and-updating-the-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polling and updating the attributes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-mod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing the mod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-on-this-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building on this pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Subnautica 2 Beginners Guide
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Your First Mod
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="coding-your-mod">Coding your mod</h1>
+<p>Right, you've got everything set up, you've created your <code>main.lua</code> file, and you're ready to code.</p>
+<p>Here's the full source code for our "Subnautica 2 Cheat" mod. We'll walk through each section below:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">---@type table</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">UEHelpers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="s2">&quot;UEHelpers&quot;</span><span class="p">)</span>
+
+<span class="c1">---@type string</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">MOD_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;BeginnersGuideCheatMod&quot;</span>
+
+<span class="c1">---@type boolean</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">debugMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+
+<span class="c1">-- Simple helper function to log messages with the mod name as a prefix</span>
+<span class="c1">---@param msg string</span>
+<span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="nv">msg</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nb">string.format</span><span class="p">(</span><span class="s2">&quot;[%s] %s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">MOD_NAME</span><span class="p">,</span><span class="w"> </span><span class="nv">msg</span><span class="p">))</span>
+<span class="kr">end</span>
+
+<span class="c1">-- Hold a reference to the player&#39;s attribute set so we can modify it each tick</span>
+<span class="c1">---@type UUWESurvivalAttributeSet|nil</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">attrSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span>
+
+<span class="c1">-- Function to find the player&#39;s survival attribute set in memory</span>
+<span class="c1">---@return UUWESurvivalAttributeSet|nil</span>
+<span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">findPlayerAttrSet</span><span class="p">()</span>
+<span class="w">    </span><span class="c1">---@type UUWESurvivalAttributeSet[]|nil</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">FindAllOf</span><span class="p">(</span><span class="s2">&quot;UWESurvivalAttributeSet&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">set</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">all</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">set</span><span class="p">:</span><span class="nf">IsValid</span><span class="p">()</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">set</span><span class="p">:</span><span class="nf">GetFullName</span><span class="p">():</span><span class="nf">find</span><span class="p">(</span><span class="s2">&quot;BP_Character_01_C&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="kr">return</span><span class="w"> </span><span class="nv">set</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">nil</span>
+<span class="kr">end</span>
+
+<span class="c1">-- When the player spawns, find and set the survival attribute set</span>
+<span class="nf">NotifyOnNewObject</span><span class="p">(</span><span class="s2">&quot;/Game/Blueprints/Character/player/BP_Character_01.BP_Character_01_C&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+<span class="w">    </span><span class="nf">ExecuteInGameThread</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">findPlayerAttrSet</span><span class="p">()</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">attrSet</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="nf">log</span><span class="p">(</span><span class="s2">&quot;Player character created - survival attributes found! Infinite Oxygen, Food, and Water enabled!&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+
+<span class="c1">-- Loop every 500ms to keep oxygen, food, and water at their maximum values</span>
+<span class="nf">LoopAsync</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+<span class="w">    </span><span class="nf">ExecuteInGameThread</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">attrSet</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">attrSet</span><span class="p">:</span><span class="nf">IsValid</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="c1">-- If we&#39;re in debug mode, don&#39;t wait for the player to respawn. This allows us to hot reload the mod</span>
+<span class="w">            </span><span class="c1">-- by setting debugMode to true</span>
+<span class="w">            </span><span class="kr">if</span><span class="p">(</span><span class="nv">debugMode</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">                </span><span class="nf">log</span><span class="p">(</span><span class="s2">&quot;Survival attribute set not found or invalid. Attempting to find it again...&quot;</span><span class="p">)</span>
+<span class="w">                </span><span class="nv">attrSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">findPlayerAttrSet</span><span class="p">()</span>
+<span class="w">            </span><span class="kr">end</span>
+<span class="w">            </span><span class="kr">return</span>
+<span class="w">        </span><span class="kr">end</span>
+
+<span class="w">        </span><span class="c1">-- Oxygen</span>
+<span class="w">        </span><span class="c1">---@type number</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">maxOxygen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">MaxOxygen</span><span class="p">.</span><span class="py">CurrentValue</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Oxygen</span><span class="p">.</span><span class="py">BaseValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxOxygen</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Oxygen</span><span class="p">.</span><span class="py">CurrentValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxOxygen</span>
+
+<span class="w">        </span><span class="c1">-- Food</span>
+<span class="w">        </span><span class="c1">---@type number</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">maxFood</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">MaxFood</span><span class="p">.</span><span class="py">CurrentValue</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Food</span><span class="p">.</span><span class="py">BaseValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxFood</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Food</span><span class="p">.</span><span class="py">CurrentValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxFood</span>
+
+<span class="w">        </span><span class="c1">-- Water</span>
+<span class="w">        </span><span class="c1">---@type number</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">maxWater</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">MaxWater</span><span class="p">.</span><span class="py">CurrentValue</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Water</span><span class="p">.</span><span class="py">BaseValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxWater</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Water</span><span class="p">.</span><span class="py">CurrentValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxWater</span>
+<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span>
+<span class="kr">end</span><span class="p">)</span>
+
+<span class="nf">log</span><span class="p">(</span><span class="s2">&quot;Loaded!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="annotations">Annotations</h2>
+<p>You'll see in the code that we "annotate" the local variable declarations and function parameters and return values. Annotations are those lines prefixed by "---". For example:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Hold a reference to the player&#39;s attribute set so we can modify it each tick</span>
+<span class="c1">---@type UUWESurvivalAttributeSet|nil</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">attrSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span>
+</code></pre></div>
+<p>Annotations are just there to help VS Code identify the various types and classes. When you explicitly specify the type or class of a variable or function, via an annotation, VS Code can highlight possible issues and incompatibilities, as well as offer code completion suggestions as you're developing your mod. It's well worth using annotation wherever possible, as it will just make your life easier, and save you lots of potential headaches in the future. </p>
+<h2 id="setup-and-logging">Setup and logging</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">---@type table</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">UEHelpers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="s2">&quot;UEHelpers&quot;</span><span class="p">)</span>
+
+<span class="c1">---@type string</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">MOD_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;BeginnersGuideCheatMod&quot;</span>
+
+<span class="c1">---@type boolean</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">debugMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+
+<span class="c1">-- Simple helper function to log messages with the mod name as a prefix</span>
+<span class="c1">---@param msg string</span>
+<span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="nv">msg</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nb">string.format</span><span class="p">(</span><span class="s2">&quot;[%s] %s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">MOD_NAME</span><span class="p">,</span><span class="w"> </span><span class="nv">msg</span><span class="p">))</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p><code>UEHelpers</code> is a utility library bundled with UE4SS that provides some handy convenience functions. We're not using it a lot here, but it's good practice to include it. You can see what functions it offers in the <a href="https://github.com/UE4SS-RE/RE-UE4SS/blob/main/assets/Mods/shared/UEHelpers/UEHelpers.lua">UE4SS GitHub repository</a>. Our little log helper simply prefixes our print output with the mod name, which makes it easy to spot our messages in the UE4SS console.</p>
+<p>Having a <code>debugMode</code> is really useful. You can refer to this in your code to add additional functionality and logging that you use while you're developing the mod. For example, you might log additional information or debug messages, or you might skip or add specific functionality when debugging is enabled. You can quickly change this between <code>true</code> and <code>false</code> as you're working. Just remember to ship your mod with <code>debugMode</code> set to <code>false</code>.</p>
+<h2 id="finding-the-players-attribute-set">Finding the player's attribute set</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Hold a reference to the player&#39;s attribute set so we can modify it each tick</span>
+<span class="c1">---@type UUWESurvivalAttributeSet|nil</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">attrSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span>
+
+<span class="c1">-- Function to find the player&#39;s survival attribute set in memory</span>
+<span class="c1">---@return UUWESurvivalAttributeSet|nil</span>
+<span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">findPlayerAttrSet</span><span class="p">()</span>
+<span class="w">    </span><span class="c1">---@type UUWESurvivalAttributeSet[]|nil</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">FindAllOf</span><span class="p">(</span><span class="s2">&quot;UWESurvivalAttributeSet&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">set</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">all</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">set</span><span class="p">:</span><span class="nf">IsValid</span><span class="p">()</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">set</span><span class="p">:</span><span class="nf">GetFullName</span><span class="p">():</span><span class="nf">find</span><span class="p">(</span><span class="s2">&quot;BP_Character_01_C&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="kr">return</span><span class="w"> </span><span class="nv">set</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">nil</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>This is where our earlier investigation pays off. We know from the UE4SS Live View that the class we want is <code>UWESurvivalAttributeSet</code>, and we know it lives on "BP_Character_01_C". We also know that there may be multiple instances of <code>UWESurvivalAttributeSet</code> in the game world, so we can't just grab the first one - we filter by "BP_Character_01_C" in the full name to make sure we get the player's instance specifically.</p>
+<p>The <code>attrSet</code> variable is declared outside the function so we can hold onto the reference once we've found it, rather than searching on every poll.</p>
+<p>The <code>for _, set in ipairs(all) do</code> construct is the Lua equivalent of a <code>for each</code> loop, that you might be familiar with from other languages. It allows you to iterate over lists or arrays, though be aware that those are referred to in Lua speak as "tables"!</p>
+<h2 id="finding-the-reference-on-spawn">Finding the reference on spawn</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">-- When the player spawns, find and set the survival attribute set</span>
+<span class="nf">NotifyOnNewObject</span><span class="p">(</span><span class="s2">&quot;/Game/Blueprints/Character/player/BP_Character_01.BP_Character_01_C&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+<span class="w">    </span><span class="nf">ExecuteInGameThread</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">findPlayerAttrSet</span><span class="p">()</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">attrSet</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="nf">log</span><span class="p">(</span><span class="s2">&quot;Player character created - survival attributes found! Infinite Oxygen, Food, and Water enabled!&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div>
+<p>Rather than searching for the attribute set on every loop tick, we use <code>NotifyOnNewObject()</code> to watch for the player character being created. This fires both on initial spawn and on respawn after death, which means we always have a fresh reference. We explicitly set <code>attrSet</code> to <code>nil</code> before re-acquiring it to ensure we're never holding a stale reference to an old instance.</p>
+<p>The asset path ""/Game/Blueprints/Character/player/BP_Character_01.BP_Character_01_C" is the "concrete" player character class that we identified in FModel. This is distinct from the base <code>BP_SN2PlayerCharacter</code> class in Blueprints/Core. Using the concrete class ensures the callback fires at the right point in the character's initialisation.</p>
+<h2 id="polling-and-updating-the-attributes">Polling and updating the attributes</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Loop every 500ms to keep oxygen, food, and water at their maximum values</span>
+<span class="nf">LoopAsync</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+<span class="w">    </span><span class="nf">ExecuteInGameThread</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">attrSet</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">attrSet</span><span class="p">:</span><span class="nf">IsValid</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="c1">-- If we&#39;re in debug mode, don&#39;t wait for the player to respawn. This allows us to hot reload the mod</span>
+<span class="w">            </span><span class="c1">-- by setting debugMode to true</span>
+<span class="w">            </span><span class="kr">if</span><span class="p">(</span><span class="nv">debugMode</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">                </span><span class="nf">log</span><span class="p">(</span><span class="s2">&quot;Survival attribute set not found or invalid. Attempting to find it again...&quot;</span><span class="p">)</span>
+<span class="w">                </span><span class="nv">attrSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">findPlayerAttrSet</span><span class="p">()</span>
+<span class="w">            </span><span class="kr">end</span>
+<span class="w">            </span><span class="kr">return</span>
+<span class="w">        </span><span class="kr">end</span>
+
+<span class="w">        </span><span class="c1">-- Oxygen</span>
+<span class="w">        </span><span class="c1">---@type number</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">maxOxygen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">MaxOxygen</span><span class="p">.</span><span class="py">CurrentValue</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Oxygen</span><span class="p">.</span><span class="py">BaseValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxOxygen</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Oxygen</span><span class="p">.</span><span class="py">CurrentValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxOxygen</span>
+
+<span class="w">        </span><span class="c1">-- Food</span>
+<span class="w">        </span><span class="c1">---@type number</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">maxFood</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">MaxFood</span><span class="p">.</span><span class="py">CurrentValue</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Food</span><span class="p">.</span><span class="py">BaseValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxFood</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Food</span><span class="p">.</span><span class="py">CurrentValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxFood</span>
+
+<span class="w">        </span><span class="c1">-- Water</span>
+<span class="w">        </span><span class="c1">---@type number</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">maxWater</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">MaxWater</span><span class="p">.</span><span class="py">CurrentValue</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Water</span><span class="p">.</span><span class="py">BaseValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxWater</span>
+<span class="w">        </span><span class="nv">attrSet</span><span class="p">.</span><span class="py">Water</span><span class="p">.</span><span class="py">CurrentValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">maxWater</span>
+<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div>
+<p>This loop runs every 500 milliseconds, and you can obviously tweak that to whatever poll frequency you want. On each "tick" it first checks whether we have a valid reference to the attribute set - if not, do nothing. We're waiting at this point for the player to spawn and for the survival attributes component to be found. Once found, it reads the current max value for each attribute and sets both <code>BaseValue</code> and <code>CurrentValue</code> to that max. We set both because Unreal's Gameplay Ability System maintains these separately, and setting only one may not produce the result you expect.</p>
+<h2 id="testing-the-mod">Testing the mod</h2>
+<p>Save main.lua and launch the game. UE4SS will load your mod automatically on startup. Watch the UE4SS console - you should see:</p>
+<p><code>[Subnautica2CheatMod] Loaded!</code></p>
+<p>And once you're in game and the player character is initialised:</p>
+<p><code>[Subnautica2CheatMod] Player character created - survival attributes found! Infinite Oxygen, Food, and Water enabled!</code></p>
+<p>If you make changes to main.lua while the game is running, you can reload all mods without restarting by pressing Ctrl+R while the game window has focus. Note that this won't work if focus is on the UE4SS console window - click back into the game first. This is called "hot reload" and is the most amazing thing I've ever come across, especially having spent most of my time working with Unity mods! It makes tweaking and testing so much quicker, it is, quite literally, unreal!</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>When you make a change then "hot reload", you may notice your changes aren't taking effect. Remember that our particular mod is effectively "triggered" by the player object being created. So you typically would need to quit and reload to see your changes. We've accomodated for this by checking the <code>debugMode</code> variable in the loop. So if you're testing with hot loading, don't forget to set <code>debugMode</code> to true to force the mod to find the <code>SurvivalAttributeSet</code> each time.
+</p>
+</blockquote>
+<h2 id="building-on-this-pattern">Building on this pattern</h2>
+<p>You'll see a pattern here:</p>
+<ul>
+<li>Watch for object creation with <code>NotifyOnNewObject</code></li>
+<li>Find a class with <code>FindAllOf</code></li>
+<li>Filter to the right instance</li>
+<li>Hold a reference</li>
+<li>Poll to keep values updated</li>
+</ul>
+<p>It's a pretty handy pattern to keep in mind, and you might come across it in other mods you see and build yourself. Once you're comfortable with it, you can apply it to almost anything you find through Live View and the Lua types. The survival attributes are a good example, but the same approach works for health, energy, temperature, or any other attribute set in the game.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../finding-what-to-change/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Finding What to Change">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Finding What to Change
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../testing-the-mod/" class="md-footer__link md-footer__link--next" aria-label="Next: Testing the Mod">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Testing the Mod
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "header.autohide", "navigation.tabs", "navigation.path", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
