@@ -56,8 +56,8 @@ theme:
   palette:
     scheme: slate
     accent: cyan
-  logo: images/sn2logo.png
-  favicon: images/favicon.ico
+  logo: assets/images/sn2logo.png
+  favicon: assets/images/favicon.ico
   features:
   - navigation.footer
   - header.autohide

@@ -11,8 +11,11 @@ Thank you for your interest in contributing to the Subnautica 2 Modding document
 
 ### Prerequisites
 
-- [Ruby](https://www.ruby-lang.org/en/downloads/) installed locally
-- [Bundler](https://bundler.io/) (`gem install bundler`)
+The documentation site is built using [MkDocs](https://www.mkdocs.org/) with the [Material theme](https://squidfunk.github.io/mkdocs-material/).
+
+To build and test the site locally, you will need:
+
+- [Python](https://www.python.org/downloads/) installed locally
 - A Markdown editor (see [Authoring Tools](#authoring-tools) below)
 
 ### First-time setup
@@ -20,7 +23,8 @@ Thank you for your interest in contributing to the Subnautica 2 Modding document
 Clone the repository and install dependencies. Commands must be run from the repository root folder:
 
 ```
-bundle install
+pip install mkdocs
+pip install mkdocs-material
 ```
 
 This only needs to be done once.
@@ -30,10 +34,10 @@ This only needs to be done once.
 To build and serve the site locally:
 
 ```
-bundle exec jekyll serve
+python -m mkdocs serve
 ```
 
-The site will be available at `http://127.0.0.1:4000`. The server will watch for changes and rebuild automatically. Hit `Ctrl+C` twice to stop.
+The site will be available at `http://127.0.0.1:8000/`. The server will watch for changes and rebuild automatically. Hit `Ctrl+C` to stop.
 
 ## Authoring tools
 
@@ -46,84 +50,36 @@ Any text editor will work for editing Markdown files. The following dedicated Ma
 
 ```
 └── 📁Subnautica2Modding.github.io
-    └── 📁_sass
-        └── 📁custom			<- Custom layout
     └── 📁.github
-        └── 📁workflows			<- GitHub Actions deployment workflows (do not modify!)
-    └── 📁assets
-        └── 📁images			<- Site wide images, logo etc
-    └── 📁beginners-guide
-    └── 📁scripts				<- Helper scripts and tools for local development
-    ├── _config.yml				<- Site configuration
-    ├── Gemfile					<- Gem dependencies
-    ├── Gemfile.lock			<- Locked Gem dependencies
+        └── 📁workflows			<- Custom workflow for deploying MkDocs
+    └── 📁docs					<- All docs go in here
+        └── 📁assets
+            └── 📁images		<- Site wide images, logos, favicon
+        └── 📁beginners-guide	<- Folder for each document/topic
+            └── 📁images		<- images folder in every folder/subfolder
+    ├── mkdocs.yml				<- MkDocs and Material config
 ```
 
 ## Writing pages
 
-### Front matter
+### Site Navigation
 
-Every page must include front matter at the top of the file. Use the appropriate template below:
-
-**Top-level section page:**
-
-```yaml
----
-layout: default
-title: Your Section Title
-nav_order: 1
-has_children: true
----
-```
-
-**Child page:**
-
-```yaml
----
-layout: default
-title: Your Page Title
-parent: Your Section Title
-nav_order: 1
----
-```
-
-**Grandchild page:**
-
-```yaml
----
-layout: default
-title: Your Page Title
-parent: Your Parent Page Title
-grand_parent: Your Section Title
-nav_order: 1
----
-```
-
-### Navigation order (`nav_order`)
-
-- Every page must have a `nav_order` value.
-- Use sequential integers starting from `1`, scoped within each section.
-- Do not duplicate `nav_order` values within the same section - duplicates will cause unpredictable ordering.
-- When inserting a new page between existing pages, renumber as needed to keep the sequence clean.
+- All pages must be explicitly referenced in `mkdocs.yml`.
+- Order in the navigation panel is explicitly defined by the order in the `nav` settings.
 
 ### Folder structure
 
-- Each top-level section should have its own folder at the repository root.
-- Grandchild pages should be in a subfolder named after the parent page.
+- Each top-level section should have its own folder at the `docs` folder in the repository root.
+- Every folder and sub-folder should have an `index.md`
+- Create a new folder in the root of `docs` for new guides.
 - Have a look at the beginners-guide folder for an example.
 
 ### Images
 
 - Store images used by a section's pages in an `images/` subfolder within that section's folder.
-- Reference images using relative paths: `![Alt text](images/your-image.png).`
-- Store site-wide images (logo, favicon, etc.) in `assets/images/` at the repository root.
-- Use descriptive filenames in lowercase with hyphens, e.g. `mod-setup-screen.png`.
-
-## Gem and dependency management
-
-- **Do not modify `Gemfile`** unless you have a specific, agreed reason to add or change a dependency.
-- **Do not run `bundle update`** as part of routine work - only run it deliberately when a gem update is needed, and always commit the resulting .`Gemfile.lock`.
-- If you delete `Gemfile.lock` to resolve a dependency issue, run `bundle install` to regenerate it and commit the result.
+- Reference images using relative paths and must use Linux paths.
+- Store site-wide images (logo, favicon, etc.) in `docs/assets/images/` at the repository root.
+- Use descriptive folder and filenames in lowercase with hyphens, e.g. `mod-setup-screen.png`.
 
 ## Pull requests
 

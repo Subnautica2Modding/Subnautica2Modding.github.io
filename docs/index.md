@@ -12,7 +12,7 @@ More guides and references are added regularly by the community.
 
 ## Contributing
 
-Contributions are welcome! Whether you want to fix a typo, improve an existing guide, or write something new, please see [CONTRIBUTING.md](https://github.com/Subnautica2Modding/Subnautica2Modding.github.io/blob/main/CONTRIBUTING.md) for guidance on how to get involved.
+Contributions are welcome! Whether you want to fix a typo, improve an existing guide, or write something new, please see our [GitHub repository](https://github.com/Subnautica2Modding/Subnautica2Modding.github.io) for guidance on how to get involved.
 
 Have a suggestion but don't want to write it yourself? [Open an issue](https://github.com/Subnautica2Modding/Subnautica2Modding.github.io/issues) and let us know.
 
