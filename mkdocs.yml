@@ -1,0 +1,72 @@
+site_name: Subnautica 2 Modding
+site_url: https://subnautica2modding.github.io/
+
+# Defined the entire nav structure of the site
+nav:
+  - Home: index.md
+
+  - Subnautica 2 Beginners Guide:
+      - Subnautica 2 Beginners Guide: beginners-guide/index.md
+
+      - Before You Begin: beginners-guide/before-you-begin.md
+      - Modding Unreal Engine: beginners-guide/modding-unreal-engine.md
+      - Important Notes: beginners-guide/important-notes.md
+
+      - Setting Up for SN2 Development:
+          - Setting Up for SN2 Development: beginners-guide/setting-up/index.md
+          - Software: beginners-guide/setting-up/software.md
+
+          - Installation and Set-up:
+              - Installation and Set-up: beginners-guide/setting-up/install-and-setup/index.md
+              - Creating a Git Repo: beginners-guide/setting-up/install-and-setup/creating-a-git-repo.md
+              - FModel: beginners-guide/setting-up/install-and-setup/fmodel.md
+              - Other Tools: beginners-guide/setting-up/install-and-setup/other-tools.md
+              - UE4SS: beginners-guide/setting-up/install-and-setup/ue4ss.md
+              - Unreal Engine: beginners-guide/setting-up/install-and-setup/unreal-engine.md
+              - Visual Studio: beginners-guide/setting-up/install-and-setup/visual-studio.md
+              - VS Code: beginners-guide/setting-up/install-and-setup/vs-code.md
+              - VS Code Workspace: beginners-guide/setting-up/install-and-setup/vs-code-workspace.md
+
+      - Exploring Game Files: beginners-guide/exploring-game-files.md
+
+      - Your First Mod:
+          - Your First Mod: beginners-guide/your-first-mod/index.md
+          - Creating a Lua Mod: beginners-guide/your-first-mod/creating-lua-mod.md
+          - Finding What to Change: beginners-guide/your-first-mod/finding-what-to-change.md
+          - Coding Your Mod: beginners-guide/your-first-mod/coding-your-mod.md
+          - Testing the Mod: beginners-guide/your-first-mod/testing-the-mod.md
+          - Commit to GitHub: beginners-guide/your-first-mod/commit-to-github.md
+          - Upload to Nexus Mods: beginners-guide/your-first-mod/upload-to-nexus-mods.md
+
+      - Advanced Modding:
+          - Advanced Modding: beginners-guide/advanced-modding/index.md
+
+          - Asset Replacement Mod:
+              - Asset Replacement Mod: beginners-guide/advanced-modding/asset-replacement-mod/index.md
+
+          - Blueprint Script Mod:
+              - Blueprint Script Mod: beginners-guide/advanced-modding/blueprint-script-mod/index.md
+              - Creating a Project: beginners-guide/advanced-modding/blueprint-script-mod/creating-a-project.md
+
+      - Credits: beginners-guide/credits.md
+
+# Use the Material theme. More info here: https://squidfunk.github.io/mkdocs-material/
+theme:
+  name: material
+  palette:
+    scheme: slate
+    accent: cyan
+  logo: images/sn2logo.png
+  favicon: images/favicon.ico
+  features:
+  - navigation.footer
+  - header.autohide
+  - navigation.tabs
+  - navigation.path
+  - navigation.indexes
+
+# Admonition extension used for caution, warning, info etc.
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
