@@ -6,20 +6,20 @@ Before we do, we'll need to tweak our repository config a little:
 
 1. Run GitHub Desktop.
 
-2. If not already selected, select your "Subnautca2Mods" repository from the drop down.
+2. If not already selected, select your "Subnautica2Mods" repository from the drop down.
 
 3. You'll see a load of files marked with a green "+" symbol. These are new files that GitHub Desktop has identified, but we don't want to check all of those into our repo.
 
 4. In your repo folder, `\SubnauticaMods\`, there is a file called `.gitignore`. Find it and open it in VS Code.
 
-5. Right at the bottom of the file, add these lines:
+5. Right at the bottom of the file, add these lines to ignore all files in the shared folder:
 
    ```
    # UE Mod development files
    */shared/
    ```
 
-6. Now go back into GiitHub Desktop and you'll see a bunch of file disappear, leaving only your mod and config files:![](./images/githubrepo.png)
+   6. Now go back into GitHub Desktop and you'll see a bunch of files disappear, leaving only your mod and config files:![](./images/githubrepo.png)
 
 7. In the bottom left, enter a summary of what you've done: "Created my first mod" or something similar.
 
