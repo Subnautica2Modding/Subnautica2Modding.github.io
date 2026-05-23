@@ -19,7 +19,7 @@ Before we do, we'll need to tweak our repository config a little:
    */shared/
    ```
 
-   6. Now go back into GitHub Desktop and you'll see a bunch of files disappear, leaving only your mod and config files:![](./images/githubrepo.png)
+6. Now go back into GitHub Desktop and you'll see a bunch of files disappear, leaving only your mod and config files:![](./images/githubrepo.png)
 
 7. In the bottom left, enter a summary of what you've done: "Created my first mod" or something similar.
 
