@@ -4,7 +4,7 @@ If you're coming from modding Subnautica or Subnautica: Below Zero, you'll quick
 
 ## Core Differences
 
-As you likely already know, Subnautica 2 uses Unreal Engine, not Unity. This comes with plenty of minor quirks.
+As you likely already know, Subnautica 2 uses Unreal Engine, not Unity. This comes with plenty of minor quirks and fundamental differences.
 
 ### Game Organization
 
