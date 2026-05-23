@@ -95,13 +95,10 @@ Annotations are just there to help VS Code identify the various types and classe
 ## Setup and logging
 
 ```lua
----@type table
 local UEHelpers = require("UEHelpers")
 
----@type string
 local MOD_NAME = "BeginnersGuideCheatMod"
 
----@type boolean
 local debugMode = true
 
 -- Simple helper function to log messages with the mod name as a prefix
@@ -179,19 +176,16 @@ LoopAsync(500, function()
         end
 
         -- Oxygen
-        ---@type number
         local maxOxygen = attrSet.MaxOxygen.CurrentValue
         attrSet.Oxygen.BaseValue = maxOxygen
         attrSet.Oxygen.CurrentValue = maxOxygen
 
         -- Food
-        ---@type number
         local maxFood = attrSet.MaxFood.CurrentValue
         attrSet.Food.BaseValue = maxFood
         attrSet.Food.CurrentValue = maxFood
 
         -- Water
-        ---@type number
         local maxWater = attrSet.MaxWater.CurrentValue
         attrSet.Water.BaseValue = maxWater
         attrSet.Water.CurrentValue = maxWater
