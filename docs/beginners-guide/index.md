@@ -1,4 +1,4 @@
-# Beginners Guide to Modding Subnautica 2
+# Beginner's Guide to Modding Subnautica 2
 
 This guide is intended to give complete beginners a taste of how to go about creating mods for the amazing Subnautica 2. I'm completely new to modding UE games, so you'll learn with me, everything from what software you require, how to install it and the basics of modding Subnautica 2 and other Unreal Engine games. Within the guide you'll write you own mod, step by step, to set you up to build your own, bigger and better, mods.
 
