@@ -20,13 +20,13 @@ nav:
           - Installation and Set-up:
               - Installation and Set-up: beginners-guide/setting-up/install-and-setup/index.md
               - Creating a Git Repo: beginners-guide/setting-up/install-and-setup/creating-a-git-repo.md
-              - FModel: beginners-guide/setting-up/install-and-setup/fmodel.md
-              - Other Tools: beginners-guide/setting-up/install-and-setup/other-tools.md
               - UE4SS: beginners-guide/setting-up/install-and-setup/ue4ss.md
-              - Unreal Engine: beginners-guide/setting-up/install-and-setup/unreal-engine.md
-              - Visual Studio: beginners-guide/setting-up/install-and-setup/visual-studio.md
+              - FModel: beginners-guide/setting-up/install-and-setup/fmodel.md
               - VS Code: beginners-guide/setting-up/install-and-setup/vs-code.md
               - VS Code Workspace: beginners-guide/setting-up/install-and-setup/vs-code-workspace.md
+              - Other Tools: beginners-guide/setting-up/install-and-setup/other-tools.md
+              - Unreal Engine: beginners-guide/setting-up/install-and-setup/unreal-engine.md
+              - Visual Studio: beginners-guide/setting-up/install-and-setup/visual-studio.md
 
       - Exploring Game Files: beginners-guide/exploring-game-files.md
 
