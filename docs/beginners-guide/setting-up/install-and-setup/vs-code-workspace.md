@@ -14,14 +14,14 @@ To set up a workspace, follow these steps:
 
 5. Open this file and paste in this text:
 
-   ```json
-   {
+    ```json
+    {
        "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
        "workspace.maxPreload": 50000,
        "workspace.preloadFileSize": 5000,
        "workspace.library": ["../shared", "Scripts"]
-   }
-   ```
+    }
+    ```
 
 6. What this does is tells the LUA extension to look in the `shared` folder for the "types" files that we dumped earlier from UE4SS. There are a large number of these files, so we also tell VS code to expect lots of files and to process all of them.
 
