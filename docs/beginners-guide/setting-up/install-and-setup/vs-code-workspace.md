@@ -59,10 +59,10 @@ At this point, we can create a little mod just to make sure everything is workin
 
 9. If you don't see this popup, go back and check that:
 
-   - You've dumped the game LUA types.
-   - You've copied the resulting `shared` folder into your development folder `mods` folder.
-   - You've created the `.luarc.json` in the `mods` folder and added the content as shown above.
-   - You've reloaded the workspace. Close and re-open VS Code, just to be sure.
+    - You've dumped the game LUA types.
+    - You've copied the resulting `shared` folder into your development folder `mods` folder.
+    - You've created the `.luarc.json` in the `mods` folder and added the content as shown above.
+    - You've reloaded the workspace. Close and re-open VS Code, just to be sure.
 
 10. Now launch the game.
 
