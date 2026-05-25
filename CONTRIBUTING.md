@@ -11,7 +11,7 @@ Thank you for your interest in contributing to the Subnautica 2 Modding document
 
 ### Prerequisites
 
-The documentation site is built using [MkDocs](https://www.mkdocs.org/) with the [Material theme](https://squidfunk.github.io/mkdocs-material/).
+The documentation site is built using [Zeniscal](https://zensical.org/).
 
 To build and test the site locally, you will need:
 
@@ -23,8 +23,7 @@ To build and test the site locally, you will need:
 Clone the repository and install dependencies. Commands must be run from the repository root folder:
 
 ```
-pip install mkdocs
-pip install mkdocs-material
+pip install zensical
 ```
 
 This only needs to be done once.
@@ -34,7 +33,7 @@ This only needs to be done once.
 To build and serve the site locally:
 
 ```
-python -m mkdocs serve
+python -m zensical serve
 ```
 
 The site will be available at `http://127.0.0.1:8000/`. The server will watch for changes and rebuild automatically. Hit `Ctrl+C` to stop.
@@ -64,8 +63,8 @@ Any text editor will work for editing Markdown files. The following dedicated Ma
 
 ### Site Navigation
 
-- All pages must be explicitly referenced in `mkdocs.yml`.
-- Order in the navigation panel is explicitly defined by the order in the `nav` settings.
+- All pages must be explicitly referenced in the `nav` configuration in `zensical.toml`.
+- Order in the navigation panel is explicitly defined by the order in the `nav` configuration.
 
 ### Folder structure
 
