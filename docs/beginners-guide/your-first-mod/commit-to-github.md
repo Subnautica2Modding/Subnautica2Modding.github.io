@@ -14,10 +14,10 @@ Before we do, we'll need to tweak our repository config a little:
 
 5. Right at the bottom of the file, add these lines to ignore all files in the shared folder:
 
-   ```
-   # UE Mod development files
-   */shared/
-   ```
+    ```
+    # UE Mod development files
+    */shared/
+    ```
 
 6. Now go back into GitHub Desktop and you'll see a bunch of files disappear, leaving only your mod and config files:![](./images/githubrepo.png)
 
