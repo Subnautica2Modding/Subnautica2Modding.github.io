@@ -30,18 +30,18 @@ We want UE4SS to load mods from our dev folder, as well as from the base game fo
 
 3. You'll see a section with the text "Additional mods directories to load mods from." Add an entry here to point to the `mods` folder that you created earlier within your local git repository. For example:
 
-   ```ini
-   ; Additional mods directories to load mods from.
-   ; Use + prefix to add a directory, - prefix to remove.
-   ; Can be relative to working directory or absolute paths.
-   ; Note: If multiple directories contain mods with the same name, the last one found will be loaded.
-   ; Example:
-   ;   +ModsFolderPaths = ../SharedMods
-   ;   +ModsFolderPaths = C:/MyMods
-   ;   -ModsFolderPaths = ../SharedMods
-   ; Default: None
-   +ModsFolderPaths = E:\Dev\UnrealDev\Subnautica2Mods\mods
-   ```
+    ```ini
+    ; Additional mods directories to load mods from.
+    ; Use + prefix to add a directory, - prefix to remove.
+    ; Can be relative to working directory or absolute paths.
+    ; Note: If multiple directories contain mods with the same name, the last one found will be loaded.
+    ; Example:
+    ;   +ModsFolderPaths = ../SharedMods
+    ;   +ModsFolderPaths = C:/MyMods
+    ;   -ModsFolderPaths = ../SharedMods
+    ; Default: None
+    +ModsFolderPaths = E:\Dev\UnrealDev\Subnautica2Mods\mods
+    ```
 
 4. UE4SS will now not only load mods that you install in the base game folder, which might include mods from other authors that you want to have in your game, it will also look for the mods that you are developing in your development folder.
 
