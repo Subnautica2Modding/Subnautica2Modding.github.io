@@ -208,10 +208,9 @@ And once you're in game and the player character is initialised:
 
 If you make changes to main.lua while the game is running, you can reload all mods without restarting by pressing Ctrl+R while the game window has focus. Note that this won't work if focus is on the UE4SS console window - click back into the game first. This is called "hot reload" and is the most amazing thing I've ever come across, especially having spent most of my time working with Unity mods! It makes tweaking and testing so much quicker, it is, quite literally, unreal!
 
-> [!NOTE]
->
-> When you make a change then "hot reload", you may notice your changes aren't taking effect. Remember that our particular mod is effectively "triggered" by the player object being created. So you typically would need to quit and reload to see your changes. We've accomodated for this by checking the `debugMode` variable in the loop. So if you're testing with hot loading, don't forget to set `debugMode` to true to force the mod to find the `SurvivalAttributeSet` each time.
->
+!!! tip
+
+    When you make a change then "hot reload", you may notice your changes aren't taking effect. Remember that our particular mod is effectively "triggered" by the player object being created. So you typically would need to quit and reload to see your changes. We've accomodated for this by checking the `debugMode` variable in the loop. So if you're testing with hot loading, don't forget to set `debugMode` to true to force the mod to find the `SurvivalAttributeSet` each time.
 
 ## Building on this pattern
 
