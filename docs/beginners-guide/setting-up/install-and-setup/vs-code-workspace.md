@@ -43,15 +43,15 @@ At this point, we can create a little mod just to make sure everything is workin
 
 6. In the `main.lua` file, paste this code:
 
-   ```lua
-   local UEHelpers = require("UEHelpers")
-   local MOD_NAME = "BeginnersGuideCheatMod"
+    ```lua
+    local UEHelpers = require("UEHelpers")
+    local MOD_NAME = "BeginnersGuideCheatMod"
    
-   ---@type APlayerController
-   local playerController = UEHelpers.GetPlayerController()
+    ---@type APlayerController
+    local playerController = UEHelpers.GetPlayerController()
    
-   print(string.format("[%s] Lua Mod Test Successfully Loaded!\n", MOD_NAME))
-   ```
+    print(string.format("[%s] Lua Mod Test Successfully Loaded!\n", MOD_NAME))
+    ```
 
 7. Now, if you hover your mouse over `playerController`, you should see a little popup that describes the properties of the `APlayerController` class:![](./images/vscodeluaintellitest.png)
 
@@ -59,10 +59,10 @@ At this point, we can create a little mod just to make sure everything is workin
 
 9. If you don't see this popup, go back and check that:
 
-   - You've dumped the game LUA types.
-   - You've copied the resulting `shared` folder into your development folder `mods` folder.
-   - You've created the `.luarc.json` in the `mods` folder and added the content as shown above.
-   - You've reloaded the workspace. Close and re-open VS Code, just to be sure.
+    - You've dumped the game LUA types.
+    - You've copied the resulting `shared` folder into your development folder `mods` folder.
+    - You've created the `.luarc.json` in the `mods` folder and added the content as shown above.
+    - You've reloaded the workspace. Close and re-open VS Code, just to be sure.
 
 10. Now launch the game.
 
