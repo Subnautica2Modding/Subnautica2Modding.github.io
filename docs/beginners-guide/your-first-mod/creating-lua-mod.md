@@ -16,15 +16,31 @@ With those building blocks in mind, the structure of our mod should start to mak
 
 ## Mod set up
 
-We create our mod directly in the UE4SS mod folder so that we can build and test it quickly. Later on, we can move it into our development folder and get it all checked in to GitHub.
+We create our mod in the folder we set up earlier. Remember when we configured UE4SS to look in there? That means we can develop and test our mod without any unnecessary duplication of files, and we can use "hot reload" to quickly test iterations of our code, and commit changes straight to our git repo as we go.
 
-So, for now:
+So, let's create what we need for a complete Lua mod:
 
-1. Start by creating a folder in `\Subnautica2\Subnautica2\Binaries\Win64\ue4ss\Mods`, call it `Subnautica2CheatMod`.
-2. Within that folder, create an empty file called `enabled.txt` - this tells UE4SS to load and activate our mod.
-3. Within this folder create a folder called `scripts`.
+1. In VS Code, your workspace should include the `mods` folder that you created earlier.
 
-4. Within that folder, create a file called `main.lua`.
+2. Within that `mods` folder, use the "Explorer" pane in the top left to create a new folder called `Subnautica2CheatMod`.
 
-5. Open this file in a VS code.
+3. Within that folder, create an empty file called `enabled.txt` - this tells UE4SS to load and activate our mod.
+
+4. Within this folder create a folder called `scripts`.
+
+5. Within that folder, create a file called `main.lua` - this is where we'll add our mod code.
+
+6. Your "Explorer" pane should look something like this:
+
+   ```
+   └── 📁mods
+       └── 📁BeginnersGuideCheatMod
+           └── 📁scripts
+               ├── main.lua
+           ├── enabled.txt
+   ```
+
+7. Double click that `main.lua` file and it'll open up as a blank document in VS Code.
+
+Now we're ready to code our mod!
 
