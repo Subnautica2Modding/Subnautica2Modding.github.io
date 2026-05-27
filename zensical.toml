@@ -29,6 +29,9 @@ site_author = "MroOShaw"
 # Read more: https://zensical.org/docs/setup/basics/#site_url
 site_url = "https://subnautica2modding.github.io/"
 
+repo_url = "https://github.com/Subnautica2Modding/Subnautica2Modding.github.io"
+edit_uri = "edit/main/docs/"
+
 # The copyright notice appears in the page footer and can contain an HTML
 # fragment.
 #
@@ -174,13 +177,13 @@ features = [
     # will generate an edit button for the page. This works for common
     # repository hosting services.
     # https://zensical.org/docs/setup/repository/#content-actions
-    #"content.action.edit",
+    # "content.action.edit",
 
     # If you have a repository configured and turn on this feature, Zensical
     # will generate a button that allows the user to view the Markdown
     # code for the current page.
     # https://zensical.org/docs/setup/repository/#content-actions
-    #"content.action.view",
+    # "content.action.view",
 
     # Code annotations allow you to add an icon with a tooltip to your
     # code blocks to provide explanations at crucial points.
@@ -216,7 +219,7 @@ features = [
     # With this feature enabled, Zensical will automatically hide parts
     # of the header when the user scrolls past a certain point.
     # https://zensical.org/docs/setup/header/#automatic-hiding
-    "header.autohide",
+    # "header.autohide",
 
     # Turn on this feature to expand all collapsible sections in the
     # navigation sidebar by default.
@@ -262,7 +265,7 @@ features = [
     # When sections are enabled, top-level sections are rendered as groups in
     # the sidebar for viewports above 1220px, but remain as-is on mobile.
     # https://zensical.org/docs/setup/navigation/#navigation-sections
-    "navigation.sections",
+    # "navigation.sections",
 
     # When tabs are enabled, top-level sections are rendered in a menu layer
     # below the header for viewports above 1220px, but remain as-is on mobile.
@@ -272,7 +275,7 @@ features = [
     # When sticky tabs are enabled, navigation tabs will lock below the header
     # and always remain visible when scrolling down.
     # https://zensical.org/docs/setup/navigation/#sticky-navigation-tabs
-    #"navigation.tabs.sticky",
+    # "navigation.tabs.sticky",
 
     # A back-to-top button can be shown when the user, after scrolling down,
     # starts to scroll up again.
@@ -293,12 +296,12 @@ features = [
     # When anchor following for the table of contents is enabled, the sidebar
     # is automatically scrolled so that the active anchor is always visible.
     # https://zensical.org/docs/setup/navigation/#anchor-following
-    # "toc.follow",
+    "toc.follow",
 
     # When navigation integration for the table of contents is enabled, it is
     # always rendered as part of the navigation sidebar on the left.
     # https://zensical.org/docs/setup/navigation/#navigation-integration
-    #"toc.integrate",
+    # "toc.integrate",
 ]
 
 # ----------------------------------------------------------------------------
@@ -317,8 +320,8 @@ logo = "assets/images/sn2logo.png"
 # - https://zensical.org/docs/setup/logo-and-icons
 # - https://github.com/zensical/ui/tree/master/dist/.icons
 # ----------------------------------------------------------------------------
-#[project.theme.icon]
-#logo = "lucide/smile"
+[project.theme.icon]
+repo = "fontawesome/brands/github"
 
 # ----------------------------------------------------------------------------
 # In the "font" subsection you can configure the fonts used. By default, fonts
@@ -352,9 +355,15 @@ toggle.name = "Switch to dark mode"
 # ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
 # ----------------------------------------------------------------------------
-#[[project.extra.social]]
-#icon = "fontawesome/brands/github"
-#link = "https://github.com/user/repo"
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/Subnautica2Modding/Subnautica2Modding.github.io"
+name = "GitHub Repo"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.gg/UpWuWwq"
+name = "Discord"
 
 # ----------------------------------------------------------------------------
 # In this section you can configure the Markdown extensions that are used when
