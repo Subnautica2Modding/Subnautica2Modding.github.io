@@ -189,3 +189,12 @@ extern "C"
 }
 ```
 
+Build the mod as before, and it should automatically deploy the renamed DLL to the UE4SS mods folder.
+
+## Disable the old mod
+
+Before you test the mod, you'll need to disable your Lua mod. Do so by deleting the `enabled.txt` file in the `BeginnersGuideCheatMod` folder. This will prevent UE4SS from loading the mod. If and when you want to re-enable it, just recreate the empty `enabled.txt` file.
+
+## Test your new mod
+
+Run the game, and you should notice that oxygen, food and water get topped up every second or so.
