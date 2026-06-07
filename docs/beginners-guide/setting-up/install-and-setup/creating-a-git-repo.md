@@ -58,3 +58,14 @@ To create a repository:
     ```
 
 We'll configure the `.gitignore` file, and commit the code for our first mod, later in the guide.
+
+## Link your GitHub Account to Epic Games
+
+If you're looking to do more complex modding, you'll need access to the Epic games Unreal Engine repository. Follow these simple steps to set that up:
+
+1. Navigate to the Epic Games [Linked Accounts Page](https://www.epicgames.com)
+2. Select "GitHub" and confirm your request to link accounts.
+3. Sign in with your GitHub credentials.
+4. You should receive an email with a verification link. Click this to complete the process.
+
+Refer to this [support article](https://www.epicgames.com/help/account-c-202300000001645/linked-accounts-c-202300000001754/how-do-i-link-my-unreal-engine-account-with-my-github-account-a202300000012521) on the Epic Games website for more information and trouble shooting steps.

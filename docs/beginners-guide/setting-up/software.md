@@ -16,7 +16,8 @@ Irrespective of what you are making, you'll want to download and install these t
 -   **UAssetGUI** - a tool to help repackage assets without the need for the full UE installation. Some scenarios still require the full UE installation.
 -   **Unreal Engine** - the full game engine. Only needed if you want to go full on into creating your own systems, assets, behaviours etc. Might also be useful for repackaging modified assets, depending on the nature of your mod.
 -   **Visual Studio** - this can be required by complex mods that need the Windows build pipeline and the Windows SDK.
--   **GitHub Desktop** - not mandatory, but good to manage your source code in a Git repository, which will allow you to share and collaborate with others.
+-   **Rust** - required when building UE4SS from source for C++ mods, as parts of the UE4SS build toolchain depend on Rust.
+-   **GitHub Desktop** - not mandatory, but good to manage your own mod source code in a Git repository, which will allow you to share and collaborate with others.
 -   **Vortex** - a plugin manager from Nexusmods. Not essential, but handy for installing and managing mods in the games.
 
 ## Downloads
@@ -32,6 +33,7 @@ Here's a simple checklist of the tools that I've used in this tutorial and where
 | Optional  | UAssetGUI                        | [Github.com](https://github.com/atenfyr/UAssetGUI/releases)  |
 | Optional  | Unreal Engine 5                  | [Unrealengine.com](https://www.unrealengine.com/download)    |
 | Optional  | Visual Studio Community Edition  | [Microsoft.com](https://visualstudio.microsoft.com/vs/community/) |
+| Optional  | Rust                             | [Rust-lang.org](https://www.rust-lang.org/tools/install)     |
 | Optional  | GitHub Desktop                   | [Github.com](https://desktop.github.com/)                    |
 | Optional  | Vortex                           | [Nexusmods.com](https://www.nexusmods.com/site/mods/1?tab=files) |
 

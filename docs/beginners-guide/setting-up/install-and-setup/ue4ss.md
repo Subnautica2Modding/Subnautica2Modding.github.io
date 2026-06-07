@@ -72,3 +72,13 @@ Generate this by following these steps:
 5. You can leave that file where it is.
 
 You now have a working mods loader and invaluable tool for developing and testing your own mods.
+
+## Generate C++ headers
+
+We'll use these in our advanced modding section, when we explore a C++/scripting mod. So let's generate these now:
+
+1. With UE4SS installed, launch the game.
+2. Click the "Dumpers" button at the top.
+3. Click "Generate CXX Headers".
+4. This will create a folder called `CXXHeaderDump` in `\Subnautica2\Subnautica2\Binaries\Win64\ue4ss`.
+5. Leave these here for now - we'll copy them in when we need them later.

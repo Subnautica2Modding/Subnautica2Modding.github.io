@@ -2,6 +2,7 @@
 
 We've just scraped the tip of the iceberg with our little LUA mod. If you want to do more, and delve into more complex mods and modding topics, here we'll explore the more advance types of mods:
 
+- C++/scripting mods.
 - Asset replacement mods.
 - Blueprint/script mods.
 

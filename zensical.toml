@@ -71,7 +71,8 @@ nav = [
               { "VS Code Workspace" = "beginners-guide/setting-up/install-and-setup/vs-code-workspace.md" },
               { "Other Tools" = "beginners-guide/setting-up/install-and-setup/other-tools.md" },
               { "Unreal Engine" = "beginners-guide/setting-up/install-and-setup/unreal-engine.md" },
-              { "Visual Studio" = "beginners-guide/setting-up/install-and-setup/visual-studio.md" }
+              { "Visual Studio" = "beginners-guide/setting-up/install-and-setup/visual-studio.md" },
+              { "Rust" = "beginners-guide/setting-up/install-and-setup/rust.md" }
           ] }
       ] },
 
@@ -89,6 +90,14 @@ nav = [
 
       { "Advanced Modding" = [
           { "Advanced Modding" = "beginners-guide/advanced-modding/index.md" },
+
+          { "C++/Scripting Mods" = [
+              { "C++/Scripting Mods" = "beginners-guide/advanced-modding/cpp-mod/index.md" },
+              { "Mod Setup" = "beginners-guide/advanced-modding/cpp-mod/cpp-mod-setup.md" },
+              { "Project Template" = "beginners-guide/advanced-modding/cpp-mod/cpp-project-template.md" },
+              { "Install and Test" = "beginners-guide/advanced-modding/cpp-mod/testing-cpp-mod.md" },
+              { "Coding the Mod" = "beginners-guide/advanced-modding/cpp-mod/code-cpp-mod.md" },
+          ] },
 
           { "Asset Replacement Mod" = [
               { "Asset Replacement Mod" = "beginners-guide/advanced-modding/asset-replacement-mod/index.md" }
