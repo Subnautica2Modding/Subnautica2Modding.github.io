@@ -17,7 +17,9 @@ For this first C++ mod, we'll keep things simple to begin with. We will:
 3. Install the DLL into the game's UE4SS `Mods` folder.
 4. Confirm that UE4SS loads the mod and prints a message to the console.
 
-That might sound boring and you'd be right to think so! This is essentially the C++ equivalent of getting a Lua `print` statement working. However, once you can reliably build, load, and debug a compiled mod, you have the foundation for doing more interesting things.
+That might sound boring and you'd be right to think so! This is essentially the C++ equivalent of getting a Lua `print` statement working. However, once you can reliably build, load, and debug a compiled mod, you have the foundation for doing more interesting things. We will then enhance that code to replicated the "unlimited oxygen, food, and water" cheat functionality that we implemented in our Lua example.
+
+The full source code for the final C++ mod can be found in my GitHub repository: [BeginnersGuideCppCheatMod](https://github.com/mroshaw/Subnautica2Mods/tree/main/mods/BeginnersGuideCppCheatMod).
 
 ## Why use C++?
 
