@@ -7,7 +7,7 @@ Here's the full source code for our "Subnautica 2 Cheat" mod. We'll walk through
 ```lua
 local UEHelpers = require("UEHelpers")
 
-local MOD_NAME = "BeginnersGuideCheatMod"
+local MOD_NAME = "BeginnersGuideLuaCheatMod"
 
 local debugMode = false
 
@@ -97,7 +97,7 @@ Annotations are just there to help VS Code identify the various types and classe
 ```lua
 local UEHelpers = require("UEHelpers")
 
-local MOD_NAME = "BeginnersGuideCheatMod"
+local MOD_NAME = "BeginnersGuideLuaCheatMod"
 
 local debugMode = true
 

@@ -4,5 +4,5 @@ This is where it starts to get fun! Let create a mod that will give the player u
 
 If you're stuck, or just need a bit of a nudge in the right direction, you can always refer to the working source code in my GitHub repository:
 
-[BeginnersGuideCheatMod](https://github.com/mroshaw/Subnautica2Mods/tree/main/mods/BeginnersGuideCheatMod)
+[BeginnersGuideCheatMod](https://github.com/mroshaw/Subnautica2Mods/tree/main/mods/BeginnersGuideLuaCheatMod)
 

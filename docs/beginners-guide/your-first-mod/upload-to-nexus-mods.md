@@ -7,7 +7,7 @@ The hard part is done, your mod is a success, and you want to share your mod wit
 Packaging Lua mods is much simpler than more complex asset or blueprint mods. You just need to ZIP the mod folder, which should contain:
 
 ```
-└── 📁BeginnersGuideCheatMod
+└── 📁BeginnersGuideLuaCheatMod
     └── 📁scripts
         ├── main.lua
     ├── enabled.txt
